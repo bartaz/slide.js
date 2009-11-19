@@ -17,6 +17,15 @@
           }
         });
 
+      // bind events to slideshow action links
+      $.each(["start", "stop", "toggle", "next", "prev"], function () {
+        var name = this + "";
+        $("a[rel='slide." + name + "']").click(function () {
+          $.slide[name]();
+          return false;
+        });
+      });
+
       // turn all links with rel='iframe' into iframes
       // each iframe will be covered by overlay to prevent stealing focus
       $(".slide a[rel='iframe']").each(function () {
@@ -43,9 +52,15 @@
       $("body").removeClass("slideshow");
     },
 
+    toggle: function () {
+      $("body").hasClass("slideshow") ?
+        $.slide.stop() :
+        $.slide.start();
+    },
+
     show: function (slide) {
       if (slide.length) {
-        $('html,body').animate({scrollTop: slide.offset().top}, 500, function () {
+        $('html,body').animate({scrollTop: slide.offset().top, scrollLeft: slide.offset().left}, 500, function () {
           if (slide.attr("id")) {
             window.location.hash = "#" + slide.attr("id");
           }
@@ -59,7 +74,7 @@
   $.each(["next", "prev"], function () {
     var name = this + "";
     $.slide[name] = function () {
-      $.slide.show($.slide.current[name]());
+      $.slide.show($.slide.current[name](".slide"));
     };
   });
 

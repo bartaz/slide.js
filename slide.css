@@ -1,10 +1,52 @@
 /*
+ * Toolbar styles
+ */
+
+#toolbar {
+    position: fixed;
+    bottom: 0; left: 0;
+    padding: 10px;
+}
+
+.slideshow #toolbar       { opacity: 0.1; }
+.slideshow #toolbar:hover { opacity: 0.7; }
+
+    #toolbar li {
+        float: left;
+        margin-right: 5px;
+        text-indent: -9999px;
+    }
+
+        #toolbar li a {
+            display:block;
+            width: 24px; height: 24px;
+            background: url(icons.png) no-repeat 0 0;
+        }
+
+        #toolbar .slide-toggle a       { background-position: -48px   0;   }
+        #toolbar .slide-toggle a:hover { background-position: -48px -24px; }
+
+        .slideshow #toolbar .slide-toggle a       { background-position: -72px   0;   }
+        .slideshow #toolbar .slide-toggle a:hover { background-position: -72px -24px;   }
+
+        #toolbar .slide-prev a       { background-position: 0   0;   }
+        #toolbar .slide-prev a:hover { background-position: 0 -24px; }
+
+        #toolbar .slide-next a       { background-position: -24px   0;   }
+        #toolbar .slide-next a:hover { background-position: -24px -24px; }
+
+
+/*
  * Generic slides styles
  */
 
-.slideshow .slide,
-.slideshow .slide iframe,
-.slideshow .overlay {
+/* hide all slideshow elements in body */
+.slideshow-only { display: none; }
+
+/* but show them when document is in slideshow mode */
+.slideshow .slideshow-only { display: block; }
+
+.slideshow .slide {
     position: relative;
     height: 800px;
 }
@@ -19,48 +61,45 @@
     overflow: hidden;
 }
 
-.slideshow .overlay a {
-    position: absolute;
-    top: 0; right: 0;
-    padding: 0.25em;
-    background: #FFFFCC;
-    -moz-border-radius-bottomleft: 0.25em;
-    -webkit-border-bottom-left-radius: 0.25em;
-}
+    .slideshow .overlay a {
+        position: absolute;
+        top: 0; right: 0;
+        padding: 0.25em;
+        background: #FFFFCC;
+        -moz-border-radius-bottomleft: 0.25em;
+        -webkit-border-bottom-left-radius: 0.25em;
+    }
 
-/* hide all slideshow elements in body */
-.slideshow-only { display: none; }
-
-/* but show them when document is in slideshow mode */
-.slideshow .slideshow-only { display: block; }
 
 /*
  * My slide-show styles
  */
 
-.slideshow {
+.slideshow .slide {
     font-size: 2em;
 }
 
-.slideshow h1 { font-size: 6em; }
-.slideshow h2 { font-size: 3em; }
+  .slideshow h1 { font-size: 6em; }
+  .slideshow h2 { font-size: 3em; }
 
-.slideshow .content.slide {
-    padding: 2em;
-}
+  .slideshow .content.slide {
+      padding: 2em;
+  }
 
-.slideshow #title {
-    padding: 5em 0;
-}
+  .slideshow p {
+      margin: 1em 0;
+  }
 
-.slideshow #title h1,
-.slideshow #title p {
-    width: 800px;
-    margin: auto;
-    text-align: center;
-}
+/* Title slide */
 
-.slideshow p {
-    margin: 1em 0;
-}
+  .slideshow #title {
+      padding: 5em 0;
+  }
+
+    .slideshow #title h1,
+    .slideshow #title p {
+        width: 800px;
+        margin: auto;
+        text-align: center;
+    }
 
