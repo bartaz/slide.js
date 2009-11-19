@@ -1,6 +1,6 @@
 (function () {
 
-  var SLIDE = {
+  $.slide = {
 
     init: function () {
       // bind events for changing slides
@@ -8,10 +8,10 @@
         .keydown(function (e) {
           if ($("body").hasClass("slideshow")) {
             if ((e.keyCode === 39) || (e.keyCode === 40) || (e.keyCode === 32)) { // [left], [down], [space]
-              SLIDE.next();
+              $.slide.next();
               e.preventDefault();
             } else if ((e.keyCode === 37) || (e.keyCode === 38)) { // [right], [up]
-              SLIDE.prev();
+              $.slide.prev();
               e.preventDefault();
             }
           }
@@ -30,18 +30,17 @@
 
     start: function (slide) {
       if (slide) {
-        SLIDE.current = $(slide);
+        $.slide.current = $(slide);
       }
-      if (!SLIDE.current || !SLIDE.current.length) {
-        SLIDE.current = $(".slide").eq(0);
+      if (!$.slide.current || !$.slide.current.length) {
+        $.slide.current = $(".slide").eq(0);
       }
       $("body").addClass("slideshow");
-      SLIDE.show(SLIDE.current);
+      $.slide.show($.slide.current);
     },
 
     stop: function () {
       $("body").removeClass("slideshow");
-      SLIDE.current.siblings().show();
     },
 
     show: function (slide) {
@@ -51,7 +50,7 @@
             window.location.hash = "#" + slide.attr("id");
           }
         });
-        SLIDE.current = slide;
+        $.slide.current = slide;
       }
     }
 
@@ -59,15 +58,15 @@
 
   $.each(["next", "prev"], function () {
     var name = this + "";
-    SLIDE[name] = function () {
-      SLIDE.show(SLIDE.current[name]());
+    $.slide[name] = function () {
+      $.slide.show($.slide.current[name]());
     };
   });
 
   $(document).ready(function () {
 
-    SLIDE.init();
-    SLIDE.start(window.location.hash);
+    $.slide.init();
+    $.slide.start(window.location.hash);
 
   });
 
