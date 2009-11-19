@@ -5,29 +5,27 @@
 .slideshow .slide,
 .slideshow .slide iframe,
 .slideshow .overlay {
-    position: absolute;
-    top: 0px; bottom: 0px;
-    left: 0px; right: 0px;
-    overflow: hidden;
+    position: relative;
+    height: 800px;
 }
 
+.slideshow .overlay,
 .slideshow .slide iframe {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
     border: 0;
     width: 100%; height: 100%;
     overflow: hidden;
 }
 
-.slideshow .overlay {
-    z-index: 10;
-}
-
 .slideshow .overlay a {
     position: absolute;
-    bottom: 0px; right: 0px;
+    top: 0; right: 0;
     padding: 0.25em;
     background: #FFFFCC;
-    -moz-border-radius-topleft: 0.25em;
-    -webkit-border-top-left-radius: 0.25em;
+    -moz-border-radius-bottomleft: 0.25em;
+    -webkit-border-bottom-left-radius: 0.25em;
 }
 
 /* hide all slideshow elements in body */

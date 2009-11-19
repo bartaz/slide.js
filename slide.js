@@ -5,14 +5,15 @@
     init: function () {
       // bind events for changing slides
       $(window)
-        .keyup(function (e) {
+        .keydown(function (e) {
           if ($("body").hasClass("slideshow")) {
-            if ((e.keyCode === 39) || (e.keyCode === 32)) { // [left] or [space]
+            if ((e.keyCode === 39) || (e.keyCode === 40) || (e.keyCode === 32)) { // [left], [down], [space]
               SLIDE.next();
-            } else if (e.keyCode === 37) { // [right]
+              e.preventDefault();
+            } else if ((e.keyCode === 37) || (e.keyCode === 38)) { // [right], [up]
               SLIDE.prev();
+              e.preventDefault();
             }
-            e.preventDefault();
           }
         });
 
@@ -23,7 +24,7 @@
             overlay = '<div class="slideshow-only overlay"><a href="{href}" title="{title}" target="_blank">{text}</a></div>';
         iframe = iframe.replace(/\{src\}/, this.href);
         overlay = overlay.replace(/\{title\}/g, this.title).replace(/\{href\}|\{text\}/g, this.href);
-        $(this).after(iframe).after(overlay);
+        $(this).after(overlay).after(iframe);
       });
     },
 
@@ -45,11 +46,12 @@
 
     show: function (slide) {
       if (slide.length) {
-        if (slide.attr("id")) {
-          window.location.hash = "#" + slide.attr("id");
-        }
-        slide.siblings().hide();
-        SLIDE.current = slide.show();
+        $('html,body').animate({scrollTop: slide.offset().top}, 500, function () {
+          if (slide.attr("id")) {
+            window.location.hash = "#" + slide.attr("id");
+          }
+        });
+        SLIDE.current = slide;
       }
     }
 
