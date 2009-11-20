@@ -53,7 +53,7 @@
 /* but show them when document is in slideshow mode */
 .slideshow .slideshow-only { display: block; }
 
-.slideshow .slide {
+.slideshow .iframe.slide {
     position: relative;
     height: 900px;
 }
@@ -82,16 +82,16 @@
  * My slide-show styles
  */
 
-.slideshow .slide {
+.slideshow {
     font-size: 2em;
 }
 
+  .slideshow .slide {
+      margin-top: 900px;
+  }
+
   .slideshow h1 { font-size: 6em; }
   .slideshow h2 { font-size: 3em; }
-
-  .slideshow .content.slide {
-      padding: 2em;
-  }
 
   .slideshow p {
       margin: 1em 0;
@@ -100,13 +100,13 @@
 /* Title slide */
 
   .slideshow #title {
-      padding: 5em 0;
+      padding-top: 1em;
   }
 
-    .slideshow #title h1,
-    .slideshow #title p {
+    .slideshow #title,
+    .slideshow #title + p {
         width: 800px;
-        margin: auto;
+        margin: 0 auto;
         text-align: center;
     }
 
