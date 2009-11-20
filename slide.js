@@ -57,6 +57,7 @@
 
     stop: function () {
       $("body").removeClass("slideshow");
+      window.location.hash = "";
     },
 
     toggle: function () {
@@ -104,7 +105,7 @@
   };
 
   $(document).ready(function () {
-    $(".slide").slideshow(window.location.hash);
+    $.slide.init();
   });
 
 }());

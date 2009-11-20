@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Awesome slide show!</title>
+  <title>slide.js &raquo; turn your content into jQuery powered slide show</title>
   <link type="text/css" href="style.css" rel="stylesheet"></link>
   <link type="text/css" href="slide.css" rel="stylesheet"></link>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
@@ -9,13 +9,16 @@
 </head>
 <body>
 
-  <h1 id="title" class="slide">Title</h1>
-  <p>This presentation will be awesome!</p>
+  <h1 id="title" class="slide">slide.js</h1>
+  <p class="tagline">turn your content into a slideshow</p>
 
-  <h2 id="agenda" class="content slide">Content Slide</h2>
-  <p>Some content</p>
+  <p class="slideshow-exclude">slide.js is a jQuery based script that allows to turn contents of your website or blog post into a slideshow that runs inside a browser.</p>
+  <p class="slideshow-exclude">This allows you to share your presentation with others as a nicely printable website, not just as a pack of slides.</p>
 
-  <div id="jquery" class="iframe slide">
+  <h2 id="agenda" class="content slide">How does it work?</h2>
+  <p><span class="slideshow-exclude">It's actually no much more than than switching the CSS styles.</span> When slide show mode is turned on the <code>&lt;body&gt;</code> element gets the <code>.slideshow</code> class, so you can easily define rules in your CSS file.</p>
+
+  <div id="jquery" class="slideshow-only iframe slide">
     <a href="http://jquery.com" title="jQuery" rel="iframe">jQuery</a>
   </div>
 

@@ -17,10 +17,31 @@ ol, ul { list-style: none; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 body {
-    font-family: Verdana, Arial, sans-serif;
+    font-family: "Lucida Bright","Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",Georgia,serif;
+    width: 600px;
+    margin: 2em auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Futura,"Century Gothic","URW Gothic L",Helvetica,sans-serif;
+    font-family: "Lucida Bright","Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",Georgia,serif;
     font-weight: normal;
+    margin-top: 0.5em;
 }
+
+h1 { font-size:   4em; }
+h2 { font-size:   3em; }
+h3 { font-size:   2em; }
+h3 { font-size: 1.5em; }
+
+p {
+    line-height: 1.3;
+    margin-top: 0.5em;
+}
+
+.tagline {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #555555;
+}
+
+

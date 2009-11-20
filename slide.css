@@ -53,6 +53,9 @@
 /* but show them when document is in slideshow mode */
 .slideshow .slideshow-only { display: block; }
 
+/* hide things that are not ment to be in the slideshow */
+.slideshow .slideshow-exclude { display: none }
+
 .slideshow .iframe.slide {
     position: relative;
     height: 900px;
@@ -83,19 +86,25 @@
  */
 
 .slideshow {
+    font-family: "Lucida Sans Unicode","Lucida Grande","Lucida Sans",Verdana,Arial,sans-serif;
     font-size: 2em;
+    width: auto;
 }
 
-  .slideshow .slide {
-      margin-top: 900px;
-  }
+    .slideshow .slide {
+        margin-top: 900px;
+    }
 
-  .slideshow h1 { font-size: 6em; }
-  .slideshow h2 { font-size: 3em; }
+    .slideshow h1 { font-size: 5em; }
 
-  .slideshow p {
-      margin: 1em 0;
-  }
+    .slideshow h2 {
+        font-size: 3em;
+        padding: 0.5em;
+     }
+
+    .slideshow p {
+        margin: 1em 0;
+    }
 
 /* Title slide */
 
@@ -103,10 +112,27 @@
       padding-top: 1em;
   }
 
-    .slideshow #title,
-    .slideshow #title + p {
-        width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
+  .slideshow #title,
+  .slideshow .tagline {
+      width: 800px;
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  .slideshow .tagline {
+      font-size: inherit;
+      margin-top: 0.5em;
+  }
+
+  .slideshow .content.slide + p {
+      font-size: 1.5em;
+      margin: 1.5em;
+      line-height: 2em;
+      text-transform: lowercase;
+  }
+
+  .slideshow code {
+      font-size: 2em;
+      color: #3377FF;
+  }
 
