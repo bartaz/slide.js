@@ -5,7 +5,10 @@
 #toolbar {
     position: fixed;
     bottom: 0; left: 0;
-    padding: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-right-radius: 5px;
 }
 
 .slideshow #toolbar       { opacity: 0.1; }
@@ -13,7 +16,7 @@
 
     #toolbar li {
         float: left;
-        margin-right: 5px;
+        margin-left: 5px;
         text-indent: -9999px;
     }
 
@@ -52,7 +55,7 @@
 
 .slideshow .slide {
     position: relative;
-    height: 800px;
+    height: 900px;
 }
 
 .slideshow .overlay,
