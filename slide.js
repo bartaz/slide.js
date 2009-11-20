@@ -29,7 +29,7 @@
       // turn all links with rel='iframe' into iframes
       // each iframe will be covered by overlay to prevent stealing focus
       $(".slide a[rel='iframe']").each(function () {
-        var iframe = '<iframe src="{src}" class="slideshow-only"></iframe>',
+        var iframe = '<iframe src="{src}" class="slideshow-only" scrolling="no"></iframe>',
             overlay = '<div class="slideshow-only overlay"><a href="{href}" title="{title}" target="_blank">{text}</a></div>';
         iframe = iframe.replace(/\{src\}/, this.href);
         overlay = overlay.replace(/\{title\}/g, this.title).replace(/\{href\}|\{text\}/g, this.href);

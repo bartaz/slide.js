@@ -40,6 +40,10 @@
  * Generic slides styles
  */
 
+.slideshow {
+    overflow: hidden;
+}
+
 /* hide all slideshow elements in body */
 .slideshow-only { display: none; }
 
