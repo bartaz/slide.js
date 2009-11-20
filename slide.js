@@ -71,8 +71,10 @@
       if (typeof slide !== 'number') {
         slide = $.slide.slides.index($(slide));
       }
-      if (slide < 0 || slide > $.slide.slides.length) {
+      if (slide < 0) {
         slide = 0;
+      } else if (slide >= $.slide.slides.length) {
+        slide = $.slide.slides.length - 1;
       }
       if (slide !== $.slide.current) {
         $.slide.current = slide;
